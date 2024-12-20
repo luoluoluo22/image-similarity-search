@@ -94,4 +94,60 @@
 ## 文件结构
 
 ```
-image_similarity_
+image_similarity_image_similarity_search/
+├── web_app.py # Web应用主文件
+├── image_search.py # 图像搜索引擎核心
+├── requirements.txt # 依赖列表
+├── logging_config.py # 日志配置
+├── run_app.bat # 运行脚本
+├── setup_service.bat # 服务安装脚本
+├── offline_install.bat # 离线安装脚本
+├── images/ # 图片目录
+├── templates/ # 模板目录
+│ └── index.html
+└── wheels/ # 离线安装包目录
+```
+## 故障排查
+
+1. 查看服务状态：
+   ```bash
+   nssm status ImageSearch
+   ```
+
+2. 查看日志：
+   ```bash
+   type C:\apps\image_search\logs\stdout.log
+   type C:\apps\image_search\app.log
+   ```
+
+3. 直接运行应用测试：
+   ```bash
+   C:\apps\image_search\run_app.bat
+   ```
+
+## 更新部署
+
+当需要更新代码时：
+
+1. 停止服务：
+   ```bash
+   nssm stop ImageSearch
+   ```
+
+2. 更新文件
+
+3. 重启服务：
+   ```bash
+   nssm start ImageSearch
+   ```
+
+## 注意事项
+
+- 确保 images 目录中有足够的参考图片
+- 定期检查 logs 目录下的日志文件
+- 建议配置 SSL 证书以确保安全访问
+- 可以配置 Nginx 作为反向代理
+
+## 许可证
+
+MIT License
