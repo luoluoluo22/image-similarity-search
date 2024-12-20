@@ -94,7 +94,7 @@
 ## 文件结构
 
 ```
-image_similarity_image_similarity_search/
+image_similarity_search/
 ├── web_app.py # Web应用主文件
 ├── image_search.py # 图像搜索引擎核心
 ├── requirements.txt # 依赖列表
